@@ -18,7 +18,7 @@ def faceUnlock():
         cap.release()
         cv2.destroyAllWindows()
     
-    data_path = 'D:/faces/'
+    data_path = '../faces/'
     onlyfiles = [f for f in listdir(data_path) if isfile(join(data_path,f))]
 
     Training_Data, Labels = [], []
@@ -37,7 +37,7 @@ def faceUnlock():
 
     #print("Model Training Complete!!!!!")
     
-    face_classifier = cv2.CascadeClassifier('C:/ProgramData/Anaconda3/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+    face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
     def face_detector(img, size = 0.5):
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -195,7 +195,8 @@ def reset():
     
     def addFace():
         
-        face_classifier = cv2.CascadeClassifier('C:/ProgramData/Anaconda3/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+        face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+
         
         def face_extractor(img):
             
@@ -220,7 +221,7 @@ def reset():
                 face = cv2.resize(face_extractor(frame),(200,200))
                 face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
 
-                file_name_path = 'D:/faces/'+e3.get()+"."+str(count)+'.jpg'
+                file_name_path = '../faces/'+e3.get()+"."+str(count)+'.jpg'
                 cv2.imwrite(file_name_path,face)
 
                 cv2.putText(face,str(count),(50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
@@ -236,7 +237,7 @@ def reset():
         
         print('Collecting Samples Complete!!!')
         
-        data_path = 'D:/faces/'
+        data_path = '../faces/'
         onlyfiles = [f for f in listdir(data_path) if isfile(join(data_path,f))]
 
         Training_Data, Labels = [], []
