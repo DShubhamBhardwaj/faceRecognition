@@ -65,7 +65,9 @@ python FaceLock.py
 1. Face Detection: Uses Haar Cascades to detect faces in the camera feed.
 2. Face Encoding: Uses deep learning models to extract unique features from the detected face.
 3. Face Recognition: Compares the encoded features with those in the database to find a match.
-4. Authentication: If a match is found, the user is authenticated; otherwise, access is denied.v
+4. Authentication: If a match is found, the user is authenticated; otherwise, access is denied.
+
+   
 ## Documentation
 
 https://opencv.org/
@@ -73,9 +75,4 @@ https://opencv.org/
 https://docs.python.org/3/library/tkinter.html
 
 
-## How It Works
 
-1. Face Detection: Uses Haar Cascades to detect faces in the camera feed.
-2. Face Encoding: Uses deep learning models to extract unique features from the detected face.
-3. Face Recognition: Compares the encoded features with those in the database to find a match.
-4. Authentication: If a match is found, the user is authenticated; otherwise, access is denied.v
